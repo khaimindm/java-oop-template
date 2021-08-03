@@ -34,7 +34,7 @@ public interface BookService<T extends Book> {
      *
      * Соответственно, если книга была успешно сохранена - метод возвращает true, если же книга не была сохранена - метод возвращает false.
      */
-    boolean save(T book);
+        boolean save(T book);
 
     /**
      * Метод должен находить книгу по имени.
