@@ -20,5 +20,17 @@ import java.util.Objects;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public class SchoolBook extends Book {
+    private String authorName;
+    private String authorLastName;
+    private LocalDate publishDate;
 
+    public SchoolBook() {
+    }
+
+    public SchoolBook(int numberOfPages, String name, String authorName, String authorLastName, LocalDate publishDate) {
+        super(numberOfPages, name);
+        this.authorName = authorName;
+        this.authorLastName = authorLastName;
+        this.publishDate = publishDate;
+    }
 }

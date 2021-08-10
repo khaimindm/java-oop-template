@@ -16,5 +16,14 @@ import java.util.Objects;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public abstract class Book {
+    private int numberOfPages;
+    private String name;
 
+    public Book() {
+    }
+
+    public Book(int numberOfPages, String name) {
+        this.numberOfPages = numberOfPages;
+        this.name = name;
+    }
 }
