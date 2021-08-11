@@ -20,4 +20,19 @@ import java.util.Objects;
  */
 public class Author {
 
+    private String name;
+    private String lastName;
+    private LocalDate birthdate;
+    private String country;
+
+    public Author() {
+    }
+
+    public Author(String name, String lastName, LocalDate birthdate, String country) {
+        this.name = name;
+        this.lastName = lastName;
+        this.birthdate = birthdate;
+        this.country = country;
+    }
+
 }
