@@ -15,8 +15,13 @@ public class SimpleAuthorRepository implements AuthorRepository{
     }
 
     Author findByFullName(String name, String lastname){
-        if (name )
 
+        for (int i=0; i< authors.length; i++) {
+            if (name == authors[i].name && lastname == authors[i].lastName) {
+                return authors[i];
+            }
+        }
+        return null;
     }
 
     boolean remove(Author author){}
