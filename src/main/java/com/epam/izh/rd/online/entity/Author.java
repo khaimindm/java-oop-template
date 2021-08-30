@@ -35,4 +35,20 @@ public class Author {
         this.country = country;
     }
 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }

@@ -6,6 +6,21 @@ public class SimpleAuthorRepository implements AuthorRepository{
 
     int s = 0;
 
+    //public Author[] getAuthors() {
+    //    return authors;
+    //}
+
+    public String getName() {
+        return name;
+    }
+
+    String temp;
+
+    //      public String getName() {
+      //    temp = getName();
+        //  return null;
+    //      }
+
     Author[] authors = new Author[s];
 
     boolean save(Author author){
