@@ -6,13 +6,12 @@ public class SimpleAuthorRepository implements AuthorRepository{
 
     int s = 0;
 
-    //public Author[] getAuthors() {
-    //    return authors;
-    //}
+
 
     public String getName() {
         return name;
     }
+
 
     String temp;
 
@@ -28,6 +27,8 @@ public class SimpleAuthorRepository implements AuthorRepository{
         s++;
         authors = new Author[s];
     }
+
+    temp = authors[0];
 
     Author findByFullName(String name, String lastname){
 
