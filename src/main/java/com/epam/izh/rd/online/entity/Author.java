@@ -35,14 +35,21 @@ public class Author {
         this.country = country;
     }
 
+    Author fBFN = new Author();
+
     public String getName() {
         return name;
-    }
+   }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
 
-
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }

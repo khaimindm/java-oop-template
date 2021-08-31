@@ -6,34 +6,24 @@ public class SimpleAuthorRepository implements AuthorRepository{
 
     int s = 0;
 
-
-
-    public String getName() {
-        return name;
-    }
-
-
-    String temp;
-
-    //      public String getName() {
-      //    temp = getName();
-        //  return null;
-    //      }
-
     Author[] authors = new Author[s];
 
     boolean save(Author author){
+        if (
+                new  SimpleAuthorRepository().findByFullName(String name, String lastname);
+                //SimpleAuthorRepository.findByFullName();
+                //public Author findByFullName(String name, String lastname){};
+        authorService.findByFullName
+                )
         authors[s] = author;
         s++;
         authors = new Author[s];
     }
 
-    temp = authors[0];
-
-    Author findByFullName(String name, String lastname){
+    public Author findByFullName(String name, String lastname){
 
         for (int i=0; i< authors.length; i++) {
-            if (name == authors[i].name && lastname == authors[i].lastName) {
+            if (name == authors[i].getName() && lastname == authors[i].getLastName()) {
                 return authors[i];
             }
         }
