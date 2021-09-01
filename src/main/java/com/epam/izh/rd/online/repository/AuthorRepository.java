@@ -29,7 +29,7 @@ public interface AuthorRepository {
      * <p>
      * Если сохранение прошло успешно, метод должен вернуть true.
      */
-    boolean save(Author author);
+    public boolean save(Author author);
 
     /**
      * Метод должен находить в массиве authors автора по имени и фамилии (считаем, что двух авторов

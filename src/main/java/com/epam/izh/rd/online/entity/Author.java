@@ -35,7 +35,7 @@ public class Author {
         this.country = country;
     }
 
-    Author fBFN = new Author();
+    //Author fBFN = new Author();
 
     public String getName() {
         return name;
