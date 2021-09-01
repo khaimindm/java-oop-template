@@ -8,16 +8,18 @@ public class SimpleAuthorRepository implements AuthorRepository{
 
     Author[] authors = new Author[s];
 
-    boolean save(Author author){
-        if (
-                new  SimpleAuthorRepository().findByFullName(String name, String lastname);
-                //SimpleAuthorRepository.findByFullName();
-                //public Author findByFullName(String name, String lastname){};
-        authorService.findByFullName
-                )
-        authors[s] = author;
-        s++;
-        authors = new Author[s];
+    SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
+
+    public boolean save(Author author){
+
+        if (fBFN.findByFullName(author.getName(), author.getLastName()) == null) {
+            authors[s] = author;
+            s++;
+            authors = new Author[s];
+            return true;
+        }
+        return false;
+
     }
 
     public Author findByFullName(String name, String lastname){
@@ -30,10 +32,9 @@ public class SimpleAuthorRepository implements AuthorRepository{
         return null;
     }
 
-    boolean remove(Author author){}
+    public boolean remove(Author author){}
 
-    int count(){}
+    public int count(){}
 
-    // Удалить? Author[] authors = new Author[0];
 
 }
