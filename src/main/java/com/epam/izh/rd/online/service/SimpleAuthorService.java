@@ -35,4 +35,7 @@ public class SimpleAuthorService implements AuthorService{
 
     int count(){}
 
+    // Возможные ошибки.
+    // if (sAR.save(author)) возможно в качестве аргумента должен быть не author
+
 }
