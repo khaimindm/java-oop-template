@@ -21,21 +21,31 @@ public class SimpleAuthorService implements AuthorService{
     SimpleAuthorRepository sAR = new SimpleAuthorRepository();
 
     public boolean save(Author author){
-        //authorRepository.save(author);
-        //return false;
-        if (sAR.save(author)) {
-            return true;
-        }
-        return false;
+
+        return authorRepository.save(author);
+
     }
 
-    Author findByFullName(String name, String lastname){}
+    public Author findByFullName(String name, String lastname){
 
-    boolean remove(Author author){}
+        return sAR.findByFullName(name, lastname);
 
-    int count(){}
+    }
 
-    // Возможные ошибки.
-    // if (sAR.save(author)) возможно в качестве аргумента должен быть не author
+    public boolean remove(Author author){
 
+        return sAR.remove(author);
+
+    }
+
+    public int count(){
+
+        return sAR.count();
+
+    }
+
+/*Возможные ошибки.
+if (sAR.save(author)) возможно в качестве аргумента должен быть не author
+return authorRepository.save(author);
+*/
 }

@@ -35,20 +35,28 @@ public class SimpleAuthorRepository implements AuthorRepository{
     }
 
     public boolean remove(Author author){
-        fBFN.findByFullName(author.getName(), author.getLastName())
+
         if (fBFN.findByFullName(author.getName(), author.getLastName()) != null) {
+            this.authors[t] = null;
             Author[] authors = new Author[s--];
             for (int i=0; i < authors.length; i++) {
-                if (authors[i] != null) {
-
+                if (this.authors[i] != null) {
+                    authors[i] = this.authors[i];
                 }
             }
-            //System.arraycopy(authors, 0, authors, 0, authors.length);
+            this.authors = authors;
+            return true;
         }
+        return false;
 
     }
 
-    public int count(){}
+    public int count(){
 
+        return authors.length;
 
+    }
+
+/*Возможные ошибки.
+Модификатор доступа для методов public*/
 }
