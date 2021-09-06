@@ -7,7 +7,7 @@ public class SimpleAuthorRepository implements AuthorRepository{
     int s = 0;
     int t;
 
-    Author[] authors = new Author[s];
+    private Author[] authors = new Author[s];
 
     SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
 

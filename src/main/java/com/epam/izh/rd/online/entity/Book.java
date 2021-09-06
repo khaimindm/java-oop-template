@@ -26,4 +26,12 @@ public abstract class Book {
         this.numberOfPages = numberOfPages;
         this.name = name;
     }
+
+    public int getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

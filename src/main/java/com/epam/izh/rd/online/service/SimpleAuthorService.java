@@ -16,8 +16,6 @@ public class SimpleAuthorService implements AuthorService{
         this.authorRepository = authorRepository;
     }
 
-    //Author t;
-    //SimpleAuthorService sAS = new SimpleAuthorService();
     SimpleAuthorRepository sAR = new SimpleAuthorRepository();
 
     public boolean save(Author author){

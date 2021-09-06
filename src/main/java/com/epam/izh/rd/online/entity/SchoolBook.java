@@ -33,4 +33,16 @@ public class SchoolBook extends Book {
         this.authorLastName = authorLastName;
         this.publishDate = publishDate;
     }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getAuthorLastName() {
+        return authorLastName;
+    }
+
+    public LocalDate getPublishDate() {
+        return publishDate;
+    }
 }
