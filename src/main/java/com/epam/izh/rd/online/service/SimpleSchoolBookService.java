@@ -4,6 +4,7 @@ import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.entity.SchoolBook;
 import com.epam.izh.rd.online.repository.BookRepository;
 import com.epam.izh.rd.online.repository.SimpleAuthorRepository;
+import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
 
 public class SimpleSchoolBookService implements BookService{
 
@@ -18,6 +19,7 @@ public class SimpleSchoolBookService implements BookService{
     }
 
     SimpleAuthorRepository sARsSBS = new SimpleAuthorRepository();
+    SimpleSchoolBookRepository t = new SimpleSchoolBookRepository();
 
     public boolean save(SchoolBook book){
 
@@ -29,9 +31,14 @@ public class SimpleSchoolBookService implements BookService{
 
     }
 
-    SchoolBook[] findByName(String name){}
+    public SchoolBook[] findByName(String name){
+        return schoolBookBookRepository.findByName(name);
+    }
 
-    int getNumberOfBooksByName(String name){}
+    int getNumberOfBooksByName(String name){
+
+        schoolBookBookRepository.findByName(name);
+    }
 
     boolean removeByName(String name){}
 

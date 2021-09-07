@@ -33,7 +33,7 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
         
     }
 
-    boolean removeByName(String name) {
+    public boolean removeByName(String name) {
 
         SchoolBook[] schoolBooks = new SchoolBook[sASB];
         for (int i = 0; i < schoolBooks.length; i++) {
@@ -46,9 +46,15 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
                     }
                 }
             }
+            this.schoolBooks = schoolBooks;
             return true;
         }
-        //this.schoolBooks = schoolBooks;
         return false;
+    }
+
+    public int count() {
+
+        return schoolBooks.length;
+        
     }
 }

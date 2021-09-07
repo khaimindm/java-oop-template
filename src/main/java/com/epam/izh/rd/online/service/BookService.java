@@ -42,7 +42,7 @@ public interface BookService<T extends Book> {
      * <p>
      * По факту, он просто обращается к репозиторию с книгами и вызывает аналогичный метод, псоле чего возвращает результат.
      */
-    T[] findByName(String name);
+    SchoolBook[] findByName(String name); //Было: T[] findByName...
 
     /**
      * Метод должен находить количество сохраненных книг по конкретному имени книги.
