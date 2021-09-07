@@ -1,6 +1,7 @@
 package com.epam.izh.rd.online.repository;
 
 import com.epam.izh.rd.online.entity.Book;
+import com.epam.izh.rd.online.entity.SchoolBook;
 
 /**
  * Интерфейс репозитория для хранения данных о книгах
@@ -24,7 +25,7 @@ public interface BookRepository<T extends Book> {
      * <p>
      * Если сохранение прошло успешно, метод должен вернуть true.
      */
-    boolean save(T book);
+    boolean save(SchoolBook book); //Было: ...(T book);
 
     /**
      * Метод должен находить в массиве schoolBooks все книги по имени.
@@ -32,7 +33,7 @@ public interface BookRepository<T extends Book> {
      * Если книги найдены - метод должен их вернуть.
      * Если найденных по имени книг нет, должен вернуться пустой массив.
      */
-    T[] findByName(String name);
+    SchoolBook[] findByName(String name); //Было: T[] findByName...
 
     /**
      * Метод должен удалять книги из массива schoolBooks по названию.

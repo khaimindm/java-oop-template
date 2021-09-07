@@ -3,6 +3,7 @@ package com.epam.izh.rd.online.service;
 import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.entity.SchoolBook;
 import com.epam.izh.rd.online.repository.BookRepository;
+import com.epam.izh.rd.online.repository.SimpleAuthorRepository;
 
 public class SimpleSchoolBookService implements BookService{
 
@@ -16,11 +17,19 @@ public class SimpleSchoolBookService implements BookService{
         this.authorService = authorService;
     }
 
-    boolean save(SchoolBook book){
-        book.getAuthorName()
+    SimpleAuthorRepository sARsSBS = new SimpleAuthorRepository();
+
+    public boolean save(SchoolBook book){
+
+        if (sARsSBS.findByFullName(book.getAuthorName(), book.getAuthorLastName()) == null) { //Попробовать вместо sARsSBS - authorService
+            return false;
+        }
+        schoolBookBookRepository.save(book);
+        return true;
+
     }
 
-    T[] findByName(String name){}
+    SchoolBook[] findByName(String name){}
 
     int getNumberOfBooksByName(String name){}
 

@@ -32,4 +32,23 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
         return schoolBooks;
         
     }
+
+    boolean removeByName(String name) {
+
+        SchoolBook[] schoolBooks = new SchoolBook[sASB];
+        for (int i = 0; i < schoolBooks.length; i++) {
+            if (name == this.schoolBooks[i].getName()) {
+                this.schoolBooks[i] = null;
+                schoolBooks = new SchoolBook[--sASB];
+                for (int j = 0; j < schoolBooks.length; j++) {
+                    if (this.schoolBooks[i] != null) {
+                        schoolBooks[j] = this.schoolBooks[i];
+                    }
+                }
+            }
+            return true;
+        }
+        //this.schoolBooks = schoolBooks;
+        return false;
+    }
 }
