@@ -1,6 +1,7 @@
 package com.epam.izh.rd.online.entity;
 
 import java.util.Objects;
+import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
 
 /**
  * Базовая сущность для книги. Содержит базовые поля.
@@ -15,7 +16,7 @@ import java.util.Objects;
  * 5) Переопределить методы equals и hashCode - используйте генерацию (не забывайте alt+inset)
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
-public abstract class Book {
+public abstract class Book {  //Было: public abstract class Book
     private int numberOfPages;
     private String name;
 

@@ -14,7 +14,7 @@ import com.epam.izh.rd.online.entity.SchoolBook;
  * 5) Инициалазировать его пустым массивом
  * 6) Написать в классе SimpleSchoolBookRepository реализацию для всех методов (коллекции не используем, работаем только с массивами)
  */
-public interface BookRepository<SchoolBook extends Book> { //Было: ...<T extends Book>
+public interface BookRepository<T extends Book> { //Было: ...<T extends Book>
 
     /**
      * Метод должен сохранять школьную книгу в массив schoolBooks.
@@ -25,7 +25,7 @@ public interface BookRepository<SchoolBook extends Book> { //Было: ...<T ext
      * <p>
      * Если сохранение прошло успешно, метод должен вернуть true.
      */
-    boolean save(SchoolBook book); //Было: ...(T book);
+    boolean save(T book); //Было: ...(T book);
 
     /**
      * Метод должен находить в массиве schoolBooks все книги по имени.
@@ -33,7 +33,7 @@ public interface BookRepository<SchoolBook extends Book> { //Было: ...<T ext
      * Если книги найдены - метод должен их вернуть.
      * Если найденных по имени книг нет, должен вернуться пустой массив.
      */
-    SchoolBook[] findByName(String name); //Было: T[] findByName...
+    T[] findByName(String name); //Было: T[] findByName...
 
     /**
      * Метод должен удалять книги из массива schoolBooks по названию.

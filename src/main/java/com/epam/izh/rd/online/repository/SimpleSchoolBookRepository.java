@@ -9,7 +9,7 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
 
     private SchoolBook[] schoolBooks = new SchoolBook[sASB];
 
-    public boolean save(SchoolBook book){
+    boolean save(T book){
 
         schoolBooks[sASB] = book;
         sASB++;
@@ -18,7 +18,7 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
 
     }
 
-    public SchoolBook[] findByName(String name) {
+    public T[] findByName(String name) {
 
         int sASBf = 0;
         SchoolBook[] schoolBooks = new SchoolBook[sASBf];

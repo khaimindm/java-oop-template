@@ -3,6 +3,7 @@ package com.epam.izh.rd.online.service;
 import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.entity.Book;
 import com.epam.izh.rd.online.entity.SchoolBook;
+import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
 
 /**
  * Интерфейс сервиса для выполнения бизнес логики при работе с книга и авторами и взаимодействием с
@@ -21,7 +22,7 @@ import com.epam.izh.rd.online.entity.SchoolBook;
  * (который будет устанвливать в поле schoolBookBookRepository и в поле authorService значения)
  * 8) Написать в классе SimpleSchoolBookService реализацию для всех методов
  */
-public interface BookService<T extends Book> {
+public interface BookService<T extends Book> { //Было: <T extends Book>
 
     /**
      * Метод должен сохранять книгу.
@@ -35,14 +36,15 @@ public interface BookService<T extends Book> {
      *
      * Соответственно, если книга была успешно сохранена - метод возвращает true, если же книга не была сохранена - метод возвращает false.
      */
-        boolean save(SchoolBook book); //Было: (T book);
+        boolean save(T book); //Было: (T book);
 
     /**
      * Метод должен находить книгу по имени.
      * <p>
      * По факту, он просто обращается к репозиторию с книгами и вызывает аналогичный метод, псоле чего возвращает результат.
      */
-    SchoolBook[] findByName(String name); //Было: T[] findByName...
+    T[] findByName(String name); //Было: T[] findByName...
+    // SchoolBook[]
 
     /**
      * Метод должен находить количество сохраненных книг по конкретному имени книги.

@@ -20,8 +20,9 @@ public class SimpleSchoolBookService implements BookService{
 
     SimpleAuthorRepository sARsSBS = new SimpleAuthorRepository();
     SimpleSchoolBookRepository t = new SimpleSchoolBookRepository();
+    SchoolBook t2 = new SchoolBook();
 
-    public boolean save(SchoolBook book){
+    public boolean save(T book){ //Было: SchoolBook
 
         if (sARsSBS.findByFullName(book.getAuthorName(), book.getAuthorLastName()) == null) { //Попробовать вместо sARsSBS - authorService
             return false;
@@ -31,7 +32,7 @@ public class SimpleSchoolBookService implements BookService{
 
     }
 
-    public SchoolBook[] findByName(String name){
+    public T[] findByName(String name){
         return schoolBookBookRepository.findByName(name);
     }
 
@@ -57,6 +58,15 @@ public class SimpleSchoolBookService implements BookService{
         return schoolBookBookRepository.count();
     }
 
-    Author findAuthorByBookName(String name){}
+    public Author findAuthorByBookName(String name){
+
+        for (int i = 0; i < t.getSchoolBooks().length; i++) {
+            if (name == t.getSchoolBooks()[i].getName()) {
+                return authorService.findByFullName(t2.getAuthorName(), t2.getAuthorLastName());
+            }
+        }
+        return null;
+
+    }
 
 }
