@@ -57,4 +57,12 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
         return schoolBooks.length;
         
     }
+
+    public void setSchoolBooks(SchoolBook[] schoolBooks) {
+        this.schoolBooks = schoolBooks;
+    }
+
+    public SchoolBook[] getSchoolBooks() {
+        return schoolBooks;
+    }
 }

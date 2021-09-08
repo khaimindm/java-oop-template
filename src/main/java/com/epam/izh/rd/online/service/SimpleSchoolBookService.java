@@ -35,14 +35,27 @@ public class SimpleSchoolBookService implements BookService{
         return schoolBookBookRepository.findByName(name);
     }
 
-    int getNumberOfBooksByName(String name){
+    public int getNumberOfBooksByName(String name){
 
-        schoolBookBookRepository.findByName(name);
+        int tGNOBBN = 0;
+        for (int i = 0; i < t.getSchoolBooks().length; i++) {
+            if (name == t.getSchoolBooks()[i].getName()) {
+                tGNOBBN++;
+            }
+        }
+        return tGNOBBN;
+
     }
 
-    boolean removeByName(String name){}
+    public boolean removeByName(String name){
 
-    int count(){}
+        return schoolBookBookRepository.removeByName(name);
+
+    }
+
+    public int count(){
+        return schoolBookBookRepository.count();
+    }
 
     Author findAuthorByBookName(String name){}
 
