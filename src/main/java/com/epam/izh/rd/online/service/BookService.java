@@ -2,8 +2,8 @@ package com.epam.izh.rd.online.service;
 
 import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.entity.Book;
-import com.epam.izh.rd.online.entity.SchoolBook;
-import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
+//import com.epam.izh.rd.online.entity.SchoolBook;
+//import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
 
 /**
  * Интерфейс сервиса для выполнения бизнес логики при работе с книга и авторами и взаимодействием с

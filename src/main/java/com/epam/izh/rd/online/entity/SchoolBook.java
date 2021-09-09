@@ -45,4 +45,13 @@ public class SchoolBook extends Book {
     public LocalDate getPublishDate() {
         return publishDate;
     }
+
+    @Override
+    public String toString() {
+        return "SchoolBook{" +
+                "authorName='" + authorName + '\'' +
+                ", authorLastName='" + authorLastName + '\'' +
+                ", publishDate=" + publishDate +
+                '}';
+    }
 }

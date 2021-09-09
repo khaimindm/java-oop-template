@@ -1,7 +1,7 @@
 package com.epam.izh.rd.online.entity;
 
 import java.util.Objects;
-import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
+
 
 /**
  * Базовая сущность для книги. Содержит базовые поля.
@@ -34,5 +34,26 @@ public abstract class Book {  //Было: public abstract class Book
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return numberOfPages == book.numberOfPages && Objects.equals(name, book.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOfPages, name);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "numberOfPages=" + numberOfPages +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

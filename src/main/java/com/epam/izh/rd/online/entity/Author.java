@@ -35,7 +35,6 @@ public class Author {
         this.country = country;
     }
 
-    //Author fBFN = new Author();
 
     public String getName() {
         return name;
@@ -51,5 +50,44 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(name, author.name) && Objects.equals(lastName, author.lastName) && Objects.equals(birthdate, author.birthdate) && Objects.equals(country, author.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, lastName, birthdate, country);
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthdate=" + birthdate +
+                ", country='" + country + '\'' +
+                '}';
     }
 }

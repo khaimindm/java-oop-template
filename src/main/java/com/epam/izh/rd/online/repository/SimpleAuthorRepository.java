@@ -5,15 +5,17 @@ import com.epam.izh.rd.online.entity.Author;
 public class SimpleAuthorRepository implements AuthorRepository{
 
     int s = 0;
-    int t;
+    int t = 5;
+
+//    AuthorRepository a;
 
     private Author[] authors = new Author[s];
 
-    SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
+//    SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
 
     public boolean save(Author author){
 
-        if (fBFN.findByFullName(author.getName(), author.getLastName()) == null) {
+        if (findByFullName(author.getName(), author.getLastName()) == null) {  //fBFN.
             authors[s] = author;
             s++;
             authors = new Author[s];
@@ -36,7 +38,7 @@ public class SimpleAuthorRepository implements AuthorRepository{
 
     public boolean remove(Author author){
 
-        if (fBFN.findByFullName(author.getName(), author.getLastName()) != null) {
+        if (findByFullName(author.getName(), author.getLastName()) != null) { //fBFN.
             this.authors[t] = null;
             Author[] authors = new Author[s--];
             for (int i=0; i < authors.length; i++) {

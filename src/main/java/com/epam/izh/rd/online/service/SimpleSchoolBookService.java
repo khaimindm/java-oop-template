@@ -6,7 +6,7 @@ import com.epam.izh.rd.online.repository.BookRepository;
 import com.epam.izh.rd.online.repository.SimpleAuthorRepository;
 import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
 
-public class SimpleSchoolBookService implements BookService{
+public class SimpleSchoolBookService implements BookService<SchoolBook>{
 
     public SimpleSchoolBookService(){}
 
@@ -22,7 +22,7 @@ public class SimpleSchoolBookService implements BookService{
     SimpleSchoolBookRepository t = new SimpleSchoolBookRepository();
     SchoolBook t2 = new SchoolBook();
 
-    public boolean save(T book){ //Было: SchoolBook
+    public boolean save(SchoolBook book){ //Было: SchoolBook
 
         if (sARsSBS.findByFullName(book.getAuthorName(), book.getAuthorLastName()) == null) { //Попробовать вместо sARsSBS - authorService
             return false;
@@ -32,7 +32,7 @@ public class SimpleSchoolBookService implements BookService{
 
     }
 
-    public T[] findByName(String name){
+    public SchoolBook[] findByName(String name){
         return schoolBookBookRepository.findByName(name);
     }
 
