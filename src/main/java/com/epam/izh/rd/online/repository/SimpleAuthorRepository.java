@@ -4,36 +4,66 @@ import com.epam.izh.rd.online.entity.Author;
 
 public class SimpleAuthorRepository implements AuthorRepository{
 
-    int s = 0;
-    int t = 5;
+    int s = 1;
+    int p = 0;
+    int t = 0;
 
-//    AuthorRepository a;
+    Author author = new Author();
 
     private Author[] authors = new Author[s];
 
-//    SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
+    //SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
+
+
 
     public boolean save(Author author){
 
+        String h;
+        Author h2;
+        Author g;
+
+        boolean resultS = false;
+        h = author.getName();
+        g = findByFullName(author.getName(), author.getLastName());
+
         if (findByFullName(author.getName(), author.getLastName()) == null) {  //fBFN.
-            authors[s] = author;
+            authors[p] = author;
             s++;
+            p++;
             authors = new Author[s];
-            return true;
+            resultS = true;
+            h = authors[p].getName();
+            h2 = authors[p];
+
+        } else {
+            resultS = false;
         }
-        return false;
+
+        return resultS;
 
     }
 
     public Author findByFullName(String name, String lastname){
 
-        for (int i=0; i< authors.length; i++) {
-            if (name == authors[i].getName() && lastname == authors[i].getLastName()) {
-                t = i;
-                return authors[i];
+        Author resultF = null;
+        String test;
+        test = author.getName();
+
+        for (int i = 0; i < authors.length; i++) {
+            if (authors[i] == null || authors[i].getName() == null) {
+                return null;
             }
         }
-        return null;
+
+        for (int j=0; j< authors.length; j++) {
+            if (name == authors[j].getName() && lastname == authors[j].getLastName()) {
+                t = j;
+                resultF = authors[j];
+            } else {
+                resultF = null;
+            }
+        }
+        return resultF;
     }
 
     public boolean remove(Author author){
