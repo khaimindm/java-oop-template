@@ -4,36 +4,53 @@ import com.epam.izh.rd.online.entity.Author;
 
 public class SimpleAuthorRepository implements AuthorRepository{
 
-    int s = 1;
+    int sAA = 1;
     int p = 0;
     int t = 0;
 
-    Author author = new Author();
+    //Author author = new Author();
 
-    private Author[] authors = new Author[s];
+    private Author[] authors = new Author[sAA];
+    private Author[] authors1 = new Author[sAA];
 
     //SimpleAuthorRepository fBFN = new SimpleAuthorRepository();
-
 
 
     public boolean save(Author author){
 
         String h;
-        Author h2;
-        Author g;
+        String h2;
+        //Author g;
 
         boolean resultS = false;
-        h = author.getName();
-        g = findByFullName(author.getName(), author.getLastName());
+        if (authors[p] == null) {
+            authors[p] = new Author();
+        }
+
+        /*h = author.getName();
+        g = findByFullName(author.getName(), author.getLastName());*/
 
         if (findByFullName(author.getName(), author.getLastName()) == null) {  //fBFN.
+            //authors[p] = new Author();
             authors[p] = author;
-            s++;
+
+            /*g = authors[p];
+            h = g.getName();
+            h2 = h;*/
+
+            sAA++;
             p++;
-            authors = new Author[s];
+            authors1 = new Author[authors.length];
+            System.arraycopy(authors, 0, authors1, 0, authors.length);
+            authors = new Author[sAA];
+            System.arraycopy(authors1, 0, authors, 0, authors1.length);
+            //authors[sAA -1] = new Author();
+            System.out.println(authors[p-1].getName() + authors[p-1].getLastName());
+            h = authors[p-1].getName();
+            h2 = authors[p-1].getLastName();
+            authors[p-1].getName();
+            authors[p-1].getLastName();
             resultS = true;
-            h = authors[p].getName();
-            h2 = authors[p];
 
         } else {
             resultS = false;
@@ -46,31 +63,35 @@ public class SimpleAuthorRepository implements AuthorRepository{
     public Author findByFullName(String name, String lastname){
 
         Author resultF = null;
-        String test;
-        test = author.getName();
+        int c = 0;
+
+        /*String test;
+        String test2;
+        test = author.getName();*/
 
         for (int i = 0; i < authors.length; i++) {
-            if (authors[i] == null || authors[i].getName() == null) {
-                return null;
+            if (authors[i] == null) {
+                authors[i] = new Author();
             }
         }
 
-        for (int j=0; j< authors.length; j++) {
-            if (name == authors[j].getName() && lastname == authors[j].getLastName()) {
-                t = j;
-                resultF = authors[j];
-            } else {
-                resultF = null;
+        while (c < authors.length) {
+            if (name == authors[c].getName() && lastname == authors[c].getLastName()) {
+                t = c;
+                resultF = authors[c];
+                break;
             }
+            c++;
         }
         return resultF;
+
     }
 
     public boolean remove(Author author){
 
         if (findByFullName(author.getName(), author.getLastName()) != null) { //fBFN.
             this.authors[t] = null;
-            Author[] authors = new Author[s--];
+            Author[] authors = new Author[sAA--];
             for (int i=0; i < authors.length; i++) {
                 if (this.authors[i] != null) {
                     authors[i] = this.authors[i];
