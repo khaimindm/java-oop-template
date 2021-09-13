@@ -19,20 +19,24 @@ public class SimpleAuthorRepository implements AuthorRepository{
 
         boolean resultS = false;
 
-        if (authors[p] == null) {
-            authors[p] = new Author();
+        for (int i = 0; i < authors.length; i++) {
+            if (authors[i] == null) {
+                authors[i] = new Author();
+            }
         }
 
         if (findByFullName(author.getName(), author.getLastName()) == null) {  //fBFN.
-            authors[p] = author;
-            sAA++;
-            p++;
             authors1 = new Author[authors.length];
             System.arraycopy(authors, 0, authors1, 0, authors.length);
             authors = new Author[sAA];
             System.arraycopy(authors1, 0, authors, 0, authors1.length);
+            authors[p] = author;
+            p++;
 
-            //authors[sAA -1] = new Author();
+            if (sAA > 1) {
+                authors[sAA -1] = new Author();
+            }
+            sAA++;
 
             resultS = true;
 

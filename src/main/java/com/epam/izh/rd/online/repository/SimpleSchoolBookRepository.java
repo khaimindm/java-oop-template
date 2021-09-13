@@ -13,25 +13,24 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
 
     public boolean save(SchoolBook book){
 
-        boolean resultss = false;
+        //boolean resultss = false;
 
-        if (sASB != 1) {
-            schoolBooks1 = new SchoolBook[schoolBooks.length];
-            System.arraycopy(schoolBooks, 0, schoolBooks1, 0, schoolBooks.length);
-            sASB++;
-            schoolBooks = new SchoolBook[sASB];
-            System.arraycopy(schoolBooks1, 0, schoolBooks, 0, schoolBooks1.length);
-            schoolBooks[sASB - 1] = new SchoolBook();
-            schoolBooks[sASB - 1] = book;
-            resultss = true;
-        } else {
-            schoolBooks[0] = new SchoolBook();
-            schoolBooks[0] = book;
-            sASB++;
-            resultss = true;
-        }
+        schoolBooks1 = new SchoolBook[schoolBooks.length];
+        System.arraycopy(schoolBooks, 0, schoolBooks1, 0, schoolBooks.length);
+        schoolBooks = new SchoolBook[sASB];
+        System.arraycopy(schoolBooks1, 0, schoolBooks, 0, schoolBooks1.length);
+        schoolBooks[sASB - 1] = new SchoolBook();
+        schoolBooks[sASB - 1] = book;
+        sASB++;
 
-        return resultss;
+        //resultss = true;
+
+            /*schoolBooks[pB] = new SchoolBook();
+            schoolBooks[pB] = book;
+            sASB++;
+            resultss = true;*/
+
+        return true;
 
     }
 

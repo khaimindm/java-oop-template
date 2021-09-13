@@ -16,7 +16,7 @@ public class SimpleAuthorService implements AuthorService{
         this.authorRepository = authorRepository;
     }
 
-    SimpleAuthorRepository sAR = new SimpleAuthorRepository();
+    //SimpleAuthorRepository sAR = new SimpleAuthorRepository();
 
     public boolean save(Author author){
 
@@ -26,19 +26,19 @@ public class SimpleAuthorService implements AuthorService{
 
     public Author findByFullName(String name, String lastname){
 
-        return sAR.findByFullName(name, lastname);
+        return authorRepository.findByFullName(name, lastname);
 
     }
 
     public boolean remove(Author author){
 
-        return sAR.remove(author);
+        return authorRepository.remove(author);
 
     }
 
     public int count(){
 
-        return sAR.count();
+        return authorRepository.count();
 
     }
 
