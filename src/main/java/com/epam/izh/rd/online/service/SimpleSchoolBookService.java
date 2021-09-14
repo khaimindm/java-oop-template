@@ -50,14 +50,19 @@ public class SimpleSchoolBookService implements BookService<SchoolBook>{
 
     public int getNumberOfBooksByName(String name){
 
+        int l = 0;
 
-        int tGNOBBN = 0;
+        if (schoolBookBookRepository.findByName(name) != null) {
+            l = schoolBookBookRepository.findByName(name).length;
+        }
+
+        /*int tGNOBBN = 0;
         for (int i = 0; i < t.getSchoolBooks().length; i++) {
             if (name == t.getSchoolBooks()[i].getName()) {
                 tGNOBBN++;
             }
-        }
-        return tGNOBBN;
+        }*/
+        return l;
 
     }
 

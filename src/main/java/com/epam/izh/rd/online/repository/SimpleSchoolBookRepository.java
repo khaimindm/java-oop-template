@@ -36,13 +36,11 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
 
     public SchoolBook[] findByName(String name) {
 
-        int sASBf = 1;
+        int sASBf = 0;
         int pSB2f = 0;
 
         SchoolBook[] schoolBooks = new  SchoolBook[sASBf];
         SchoolBook[] schoolBooks2 = new SchoolBook[sASBf];
-
-
 
 
         for (int i=0; i< this.schoolBooks.length; i++) {
@@ -79,21 +77,36 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
 
     public boolean removeByName(String name) {
 
-        SchoolBook[] schoolBooks = new SchoolBook[sASB];
+        int sARBN = this.schoolBooks.length;
+        int sNA = 0;
+
+        SchoolBook[] schoolBooks = new SchoolBook[sARBN];
+
         for (int i = 0; i < schoolBooks.length; i++) {
             if (name == this.schoolBooks[i].getName()) {
                 this.schoolBooks[i] = null;
-                schoolBooks = new SchoolBook[--sASB];
-                for (int j = 0; j < schoolBooks.length; j++) {
+                sNA++;
+            }
+        }
+
+        schoolBooks = new SchoolBook[sARBN - sNA];
+        for (int j = 0; j < schoolBooks.length; j++) {
+            if (this.schoolBooks[j].getName() != null) {
+                schoolBooks[j] = this.schoolBooks[j];
+            }
+        }
+
+        this.schoolBooks = new SchoolBook[schoolBooks.length];
+        System.arraycopy(schoolBooks, 0, this.schoolBooks, 0, schoolBooks.length);
+
+        /*for (int j = 0; j < schoolBooks.length; j++) {
                     if (this.schoolBooks[i] != null) {
                         schoolBooks[j] = this.schoolBooks[i];
                     }
-                }
-            }
-            this.schoolBooks = schoolBooks;
-            return true;
-        }
-        return false;
+                }*/
+
+        return true;
+
     }
 
     public int count() {
