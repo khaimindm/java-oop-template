@@ -16,7 +16,7 @@ import java.util.Objects;
  * 5) Переопределить методы equals и hashCode - используйте генерацию (не забывайте alt+inset)
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
-public abstract class Book {  //Было: public abstract class Book
+public abstract class Book {
     private int numberOfPages;
     private String name;
 
@@ -31,7 +31,6 @@ public abstract class Book {  //Было: public abstract class Book
     public int getNumberOfPages() {
         return numberOfPages;
     }
-
     public String getName() {
         return name;
     }

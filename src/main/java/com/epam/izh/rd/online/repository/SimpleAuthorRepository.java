@@ -35,16 +35,13 @@ public class SimpleAuthorRepository implements AuthorRepository{
     }
 
     public Author findByFullName(String name, String lastname){
-
         Author resultF = null;
         int c = 0;
-
         for (int i = 0; i < authors.length; i++) {
             if (authors[i] == null) {
                 authors[i] = new Author();
             }
         }
-
         while (c < authors.length) {
             if (name == authors[c].getName() && lastname == authors[c].getLastName()) {
                 t = c;
@@ -53,18 +50,14 @@ public class SimpleAuthorRepository implements AuthorRepository{
             }
             c++;
         }
-
         return resultF;
-
     }
 
     public boolean remove(Author author){
-
         int sA = 0;
         int sAN = authors.length;
         boolean resultRA;
         resultRA = false;
-
         for (int i = 0; i < authors.length; i++) {
             if (findByFullName(author.getName(), author.getLastName()) != null) {
                 authors[i] = null;
@@ -72,17 +65,14 @@ public class SimpleAuthorRepository implements AuthorRepository{
                 resultRA = true;
             }
         }
-
         Author[] authors2 = new Author[sAN - sA];
         for (int j = 0; j < authors2.length; j++) {
             if (authors[j] != null) {
                 authors2[j] = authors[j];
             }
         }
-
         authors = new Author[authors2.length];
         System.arraycopy(authors2, 0, authors, 0, authors2.length);
-
         return resultRA;
     }
 

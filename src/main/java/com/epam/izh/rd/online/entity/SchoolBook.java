@@ -1,7 +1,7 @@
 package com.epam.izh.rd.online.entity;
 
 import java.time.LocalDate;
-import java.util.Objects;
+
 
 /**
  * Сущность учебника. Он должен быть унаследован от сущности Book
@@ -37,11 +37,9 @@ public class SchoolBook extends Book {
     public String getAuthorName() {
         return authorName;
     }
-
     public String getAuthorLastName() {
         return authorLastName;
     }
-
     public LocalDate getPublishDate() {
         return publishDate;
     }
