@@ -2,6 +2,7 @@ package com.epam.izh.rd.online.entity;
 
 import java.util.Objects;
 
+
 /**
  * Базовая сущность для книги. Содержит базовые поля.
  *
@@ -16,5 +17,42 @@ import java.util.Objects;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public abstract class Book {
+    private int numberOfPages;
+    private String name;
 
+    public Book() {
+    }
+
+    public Book(int numberOfPages, String name) {
+        this.numberOfPages = numberOfPages;
+        this.name = name;
+    }
+
+    public int getNumberOfPages() {
+        return numberOfPages;
+    }
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return numberOfPages == book.numberOfPages && Objects.equals(name, book.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOfPages, name);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "numberOfPages=" + numberOfPages +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

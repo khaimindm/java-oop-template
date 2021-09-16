@@ -1,7 +1,7 @@
 package com.epam.izh.rd.online.entity;
 
 import java.time.LocalDate;
-import java.util.Objects;
+
 
 /**
  * Сущность учебника. Он должен быть унаследован от сущности Book
@@ -20,5 +20,36 @@ import java.util.Objects;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public class SchoolBook extends Book {
+    private String authorName;
+    private String authorLastName;
+    private LocalDate publishDate;
 
+    public SchoolBook() {
+    }
+
+    public SchoolBook(int numberOfPages, String name, String authorName, String authorLastName, LocalDate publishDate) {
+        super(numberOfPages, name);
+        this.authorName = authorName;
+        this.authorLastName = authorLastName;
+        this.publishDate = publishDate;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+    public String getAuthorLastName() {
+        return authorLastName;
+    }
+    public LocalDate getPublishDate() {
+        return publishDate;
+    }
+
+    @Override
+    public String toString() {
+        return "SchoolBook{" +
+                "authorName='" + authorName + '\'' +
+                ", authorLastName='" + authorLastName + '\'' +
+                ", publishDate=" + publishDate +
+                '}';
+    }
 }
